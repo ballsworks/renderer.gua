@@ -17,7 +17,10 @@ split(const std::string &str, char delimiter) {
         l.push_back(str.substr(start, end - start));
         start = end + 1;
     }
-    l.push_back(str.substr(start));
+    if (!str.substr(start).empty())
+		{
+			l.push_back(str.substr(start));
+		}
     
     return l;
 }
